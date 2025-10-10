@@ -1,253 +1,315 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Colectar — Asociación Civil</title>
-  <meta name="description" content="Colectar — Asociación Civil. Promoviendo la solidaridad y el desarrollo cultural en barrios vulnerables." />
-  <style>
-    :root {
-      --bg:#f9f6f8;
-      --violet:#b8a7c9; /* violeta pastel clarito */
-      --violet-light:#d8c9e6;
-      --soft:#fff6f9;
-      --text:#222;
-      --card:#ffffff;
-      --accent:#8a6bd6; /* para detalles */
-    }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Helvetica,Arial;}
-    body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
-    header{position:sticky;top:0;z-index:50;background:var(--violet);color:white;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
-    header .brand{display:flex;align-items:center;gap:12px;}
-    header .brand img{width:48px;height:48px;border-radius:8px;object-fit:contain;}
-    header nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;}
-    header nav a.cta{background:white;color:var(--violet);}
-    .menu-toggle{display:none;cursor:pointer;}
-    main{max-width:1100px;margin:0 auto;padding:24px;}
-    section{padding:36px 0;position:relative;}
-    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
-    .section-title img{width:40px;height:40px;opacity:0.6;}
-    .section-title h2{font-size:24px;color:var(--violet);}
-    h1{font-size:28px;color:var(--accent);margin-bottom:12px;}
-    p.lead{line-height:1.45;margin-bottom:18px;}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,40,0.04);margin-bottom:24px;}
-    .btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;margin-right:8px;margin-top:6px;}
-    .btn.primary{background:var(--accent);color:white;}
-    .btn.ghost{border:1px solid rgba(0,0,0,0.08);background:transparent;}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;}
-    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;}
-    .instagram-feed{overflow-x:auto;display:flex;gap:12px;padding:12px 0;}
-    .instagram-feed iframe{flex:0 0 auto;border:none;border-radius:8px;}
-    footer{background:var(--soft);padding:30px 24px;text-align:center;color:rgba(0,0,0,0.55);}
-    .asociate-buttons{display:none;margin-top:12px;}
-    @media(max-width:560px){header nav{display:none;}.menu-toggle{display:block;}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colectar — Asociación Civil</title>
+<meta name="description" content="Colectar — Asociación Civil. Promoviendo la solidaridad y el desarrollo cultural en barrios vulnerables.">
+
+<!-- Fuente moderna -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f9f6f8;
+  --accent: #BDA0F5; /* violeta pastel */
+  --muted: #b8a7c9;
+  --soft: #fff6f9;
+  --text: #222;
+  --card: #ffffff;
+  --spacing: 1.6em;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: var(--spacing);
+}
+
+a { text-decoration: none; }
+
+header {
+  background: var(--accent);
+  position: sticky; top:0; z-index:100;
+  padding: 12px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.wrap { max-width: 1100px; margin:0 auto; padding: 0 18px; }
+
+nav {
+  display:flex; justify-content: space-between; align-items: center;
+}
+
+.brand { display:flex; align-items:center; gap:12px; }
+.brand img { width:48px; height:48px; border-radius:8px; }
+
+.menu { display:flex; gap:12px; align-items:center; }
+.menu a { padding:8px 12px; border-radius:8px; font-weight:600; color:white; transition:0.3s; }
+.menu a:hover { background: rgba(255,255,255,0.2); }
+
+.cta-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.cta-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--soft);
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-radius:10px;
+  padding:8px 0;
+  z-index: 50;
+}
+.cta-dropdown-content a {
+  color: var(--accent);
+  padding: 10px 16px;
+  display:block;
+}
+.cta-dropdown:hover .cta-dropdown-content { display:block; }
+
+main { margin-top:36px; }
+
+.hero {
+  display:grid;
+  grid-template-columns:1fr 400px;
+  gap:24px;
+  align-items:center;
+  margin-bottom:36px;
+}
+
+.hero .lead { background: var(--card); padding:28px; border-radius:14px; box-shadow:0 6px 18px rgba(20,20,40,0.04);}
+.hero .lead h1 { font-size:32px; margin-bottom:12px; color: var(--accent);}
+.hero-photo { border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(20,20,40,0.06);}
+.hero-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+
+section { margin-bottom:36px; }
+section .card { background: var(--card); border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(20,20,40,0.03); }
+
+h2, h3 { margin-bottom:12px; color: var(--accent); display:flex; align-items:center; gap:12px; }
+h2 img, h3 img { width:40px; height:40px; border-radius:50%; }
+
+ul.plain, ol { padding-left:20px; margin-top:12px; margin-bottom:12px; }
+ul.plain li, ol li { margin-bottom:8px; }
+
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:12px; }
+.gallery img { width:100%; border-radius:10px; height:140px; object-fit:cover; transition:0.3s; }
+.gallery img:hover { transform: scale(1.05); }
+
+footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0.9rem; color: var(--muted); }
+
+.instagram-carousel {
+  overflow-x: auto;
+  display:flex;
+  gap:12px;
+  padding:12px 0;
+}
+.instagram-carousel iframe {
+  flex: 0 0 auto;
+  border-radius:12px;
+  border:none;
+  height:160px;
+  width:300px;
+}
+
+@media(max-width:980px){
+  .hero { grid-template-columns:1fr; }
+  .hero-photo { order:-1; margin-bottom:24px;}
+  .gallery { grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="brand">
-      <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar">
-      <div><strong>Colectar</strong><br><small>Asociación Civil — Rosario</small></div>
-    </div>
+<header>
+  <div class="wrap">
     <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#quienes">Quiénes somos</a>
-      <a href="#que-hacemos">Qué hacemos</a>
-      <a href="#puntos-colectar">Puntos Colectar</a>
-      <a href="#empresas">Empresas</a>
-      <a href="#eventos">Eventos</a>
-      <a class="cta" href="#" id="asociate-btn">Asociate</a>
+      <div class="brand">
+        <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar">
+        <strong style="color:white;">Colectar</strong>
+      </div>
+      <div class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#quienes">Quiénes somos</a>
+        <a href="#que-hacemos">Qué hacemos</a>
+        <a href="#puntos-colectar">Puntos Colectar</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#eventos">Eventos</a>
+        <div class="cta-dropdown">
+          <a class="cta" href="#">Asociate ▾</a>
+          <div class="cta-dropdown-content">
+            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808497db5aae0197e5c2767b039a" target="_blank">Socio Promotor</a>
+            <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808497db5aae0197e5c38429039c" target="_blank">Socio Solidario</a>
+          </div>
+        </div>
+      </div>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <!-- Inicio -->
-    <section id="inicio" class="hero">
-      <div class="card">
-        <h1>Hasta que todo sea como lo soñamos</h1>
-        <p class="lead">Colectar es una asociación civil que trabaja desde febrero de 2024 para promover el desarrollo integral de personas en contextos de vulnerabilidad, enfocándose principalmente en infancias y adolescencias. Ayudanos a sostener comedores, brindamos apoyo escolar, realizamos talleres temáticos y diversas actividades culturales.</p>
-        <a class="btn primary" href="https://link.mercadopago.com.ar/donacioncolectarong" target="_blank" rel="noopener">SUMATE</a>
-        <a class="btn ghost" href="#que-hacemos">Qué hacemos</a>
+<main class="wrap">
+<section id="inicio" class="hero">
+  <div class="lead">
+    <h1>Hasta que todo sea como lo soñamos</h1>
+    <p>Colectar es una asociación civil que trabaja desde febrero de 2024 para promover el desarrollo integral de personas en contextos de vulnerabilidad, enfocándose principalmente en infancias y adolescencias. Ayudanos a sostener comedores, brindamos apoyo escolar, realizamos talleres temáticos y diversas actividades culturales.</p>
 
-        <div class="asociate-buttons" id="asociate-buttons">
-          <a class="btn primary" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808497db5aae0197e5c2767b039a" target="_blank">Socio Promotor</a>
-          <a class="btn primary" href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808497db5aae0197e5c38429039c" target="_blank">Socio Solidario</a>
-        </div>
+    <!-- Instagram Carousel -->
+    <div class="instagram-carousel">
+      <iframe src="https://snapwidget.com/embed/1109905" allowtransparency="true" scrolling="no" title="Posts from Instagram"></iframe>
+      <iframe src="https://snapwidget.com/embed/1109905" allowtransparency="true" scrolling="no" title="Posts from Instagram"></iframe>
+      <iframe src="https://snapwidget.com/embed/1109905" allowtransparency="true" scrolling="no" title="Posts from Instagram"></iframe>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="https://i.imgur.com/eyxKSWV.jpeg" alt="Foto inicio Colectar">
+  </div>
+</section>
+
+<section id="quienes">
+  <div class="card">
+    <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Quiénes somos</h2>
+    <p>Colectar comenzó en febrero de 2024 con el objetivo de contribuir al desarrollo artístico e intelectual de personas en situaciones socioeconómicas vulnerables. Promovemos la solidaridad y la empatía social construyendo redes de apoyo comunitarias.</p>
+    <h3 style="justify-content:center;">Misión<br><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"></h3>
+    <p>Promover la solidaridad y la empatía social, construyendo redes de apoyo que contribuyan a mejorar la calidad de vida de personas en situación de vulnerabilidad, desde una perspectiva colectiva y participativa.</p>
+    <h3 style="justify-content:center;">Visión<br><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"></h3>
+    <p>Ser un referente en el trabajo comunitario y solidario en nuestra ciudad, logrando un impacto duradero en los barrios más necesitados.</p>
+    <h3 style="justify-content:center;">Valores<br><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"></h3>
+    <ul class="plain">
+      <li>Solidaridad</li>
+      <li>Empatía</li>
+      <li>Transparencia</li>
+      <li>Participación colectiva</li>
+      <li>Compromiso</li>
+    </ul>
+    <h3 style="justify-content:center;">Objetivos<br><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"></h3>
+    <ol>
+      <li>Aumentar el alcance de nuestras actividades solidarias.</li>
+      <li>Ampliar la red de Puntos Colectar.</li>
+      <li>Fomentar la educación y el encuentro cultural.</li>
+      <li>Promover la participación activa de voluntarios, socios y empresas.</li>
+      <li>Favorecer la autogestión y empoderamiento comunitario.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="que-hacemos">
+  <div class="card">
+    <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Qué hacemos</h2>
+    <p>Realizamos actividades culturales solidarias y juntamos donaciones para comprar alimentos que destinamos a comedores populares de la ciudad. También sostenemos espacios de encuentro y capacitación para jóvenes.</p>
+
+    <h3>Galería</h3>
+    <div class="gallery">
+      <img src="https://i.imgur.com/cftqa9l.jpg" alt="Día de las infancias 2024">
+      <img src="https://i.imgur.com/6cT0w2M.jpeg" alt="Día de las infancias 2024-2">
+      <img src="https://i.imgur.com/DxoiKUh.jpeg" alt="Día de las infancias 2024-3">
+      <img src="https://i.imgur.com/zTrID3v.jpeg" alt="Espacio de encuentro">
+      <img src="https://i.imgur.com/ZUWhHs8.jpg" alt="Cena Fin de año 2024">
+      <img src="https://i.imgur.com/Z9ZdXVx.jpeg" alt="Cena Fin de año 2024-2">
+      <img src="https://i.imgur.com/ClkL3Xh.jpg" alt="Proyecto Alfabetización">
+      <img src="https://i.imgur.com/AYVNLKe.jpeg" alt="Proyecto Alfabetización-2">
+      <img src="https://i.imgur.com/R93Dp3d.jpg" alt="Proyecto Raíces Solidarias">
+      <img src="https://i.imgur.com/wUtLm3G.jpeg" alt="Proyecto Raíces Solidarias">
+      <img src="https://i.imgur.com/yTVJ0Qb.jpg" alt="Día de las infancias 2025">
+      <img src="https://i.imgur.com/HEhsg9t.jpeg" alt="Día de las infancias 2025-2">
+    </div>
+  </div>
+</section>
+
+<section id="puntos-colectar">
+  <div class="card">
+    <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Puntos Colectar</h2>
+    <p>Son puntos aliados donde podés acercar donaciones. Luego nosotras nos encargamos de recoger y distribuir sin intermediarios.</p>
+    <ul class="plain">
+      <li>Distrito 6 — San Martin 1168</li>
+      <li>Espacio Cultural Echesortu — San Nicolás 1164</li>
+      <li>Espacio Social y Cultural "Casona" — San Lorenzo 2157</li>
+      <li>Club social y deportivo "Cóndor" — Cafferata 1477</li>
+      <li>Centro cultural Mística — Richieri 340</li>
+      <li>Espacio de ideas Poliedro — 9 de julio 2074</li>
+      <li>Centro cultural "El Grito" — 9 de julio 1484</li>
+    </ul>
+  </div>
+</section>
+
+<section id="empresas">
+  <div class="card">
+    <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Empresas y aliados</h2>
+    <p>Los proyectos de Colectar se realizan gracias al apoyo de donaciones privadas de particulares, instituciones y empresas. Podés colaborar con las siguientes acciones:</p>
+    <ul class="plain">
+      <li>Organizar una actividad cultural solidaria.</li>
+      <li>Realizar una colecta de alimentos.</li>
+      <li>Aporte económico único o mensual.</li>
+      <li>Contratar consultoría para proyectos de inclusión social.</li>
+      <li>Donación de productos o servicios.</li>
+    </ul>
+    <p>Si te interesa colaborar, escribinos a <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a></p>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="card">
+    <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Eventos</h2>
+    <ul class="plain">
+      <li>Espacio de encuentro de jóvenes — sábados cada 15 días (Biblioteca Juanito Laguna)</li>
+      <li>Arte y Merienda — Espacio Cultural Echesortu (Abril 2024)</li>
+      <li>Fiesta de los '80 — Centro Cultural Mística (Mayo 2024)</li>
+      <li>Milonga — Club Cóndor (Agosto 2024)</li>
+      <li>Festejo día de la niñez — Barrio Santa Lucía (Agosto 2024)</li>
+      <li>Triple impacto con Mercado de Gafas (Noviembre 2024)</li>
+      <li>Cata de vino con música en vivo — Espacio Cultural Echesortu (Diciembre 2024)</li>
+      <li>Cena fin de año en Travesía — Diciembre 2024</li>
+      <li>Bingo Solidario — Centro Cultural "El grito" (Mayo 2025)</li>
+      <li>Torneo Solidario de Truco — Centro Cultural "El grito" (Junio y Agosto 2025)</li>
+      <li>Clase de Yoga Solidaria — Espacio Cultural Echesortu (Agosto 2025)</li>
+      <li>Festejo día de la niñez — Barrio Travesía (Agosto 2025)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="donar">
+  <div class="card">
+    <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Donar / Sumate</h2>
+    <p>Sabés como nos financiamos?</p>
+    <ul class="plain">
+      <li>Apoyo de nuestos socios</li>
+      <li>Organizamos actividades culturales Solidarias</li>
+      <li>Realizamos campañas especificas (vuelta al cole, día de las infancias, finde año)</li>
+      <li>Realizamos rifas solidarias</li>
+      <li>Buscamos alianzas con empresas privadas</li>
+      <li>Buscamos alianzas con otras organizaciones sociales</li>
+    </ul>
+    <p>NO RECIBIMOS AYUDA ECONÓMICA DE NINGÚN ESPACIO POLÍTICO</p>
+    <ul class="plain">
+      <li>Donaciones de alimentos no perecederos</li>
+      <li>Aportes económicos (únicos o mensuales)</li>
+      <li>Ser voluntario/a en nuestras actividades</li>
+    </ul>
+    <p>Consultas y coordinación: <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a> • Tel: 3416836137 / 3413028435</p>
+    <p>Alias de pago: <strong>COLECTAR.ONG</strong></p>
+    <p><a class="btn primary" href="https://link.mercadopago.com.ar/donacioncolectarong" target="_blank">Donar ahora</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+      <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar" style="width:48px;height:48px;">
+      <div>
+        <strong>Colectar</strong><br>
+        <small class="muted">Asociación Civil — Rosario</small>
       </div>
-
-      <!-- Noticias / Instagram -->
-      <div class="card">
-        <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Noticias</h2></div>
-        <div class="instagram-feed">
-          <iframe src="https://snapwidget.com/embed/1109905" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="width:480px;height:160px;" title="Posts from Instagram"></iframe>
-        </div>
-      </div>
-
-      <div class="hero-photo card">
-        <img src="https://i.imgur.com/eyxKSWV.jpeg" alt="Foto inicio Colectar"/>
-      </div>
-    </section>
-
-    <!-- Quiénes somos -->
-    <section id="quienes">
-      <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Quiénes somos</h2></div>
-      <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;">
-        <div class="card">
-          <p>Colectar comenzó en febrero de 2024 con el objetivo de contribuir al desarrollo artístico e intelectual de personas en situaciones socioeconómicas vulnerables. Promovemos la solidaridad y la empatía social construyendo redes de apoyo comunitarias.</p>
-          <h3>Misión</h3>
-          <p>Promover la solidaridad y la empatía social, construyendo redes de apoyo que contribuyan a mejorar la calidad de vida de personas en situación de vulnerabilidad, desde una perspectiva colectiva y participativa.</p>
-          <h3>Visión</h3>
-          <p>Ser un referente en el trabajo comunitario y solidario en nuestra ciudad, logrando un impacto duradero en los barrios más necesitados.</p>
-        </div>
-        <div class="card">
-          <h3>Valores</h3>
-          <ul>
-            <li>Solidaridad</li>
-            <li>Empatía</li>
-            <li>Transparencia</li>
-            <li>Participación colectiva</li>
-            <li>Compromiso</li>
-          </ul>
-
-          <h3>Objetivos</h3>
-          <ol>
-            <li>Aumentar el alcance de nuestras actividades solidarias.</li>
-            <li>Ampliar la red de Puntos Colectar.</li>
-            <li>Fomentar la educación y el encuentro cultural.</li>
-            <li>Promover la participación activa de voluntarios, socios y empresas.</li>
-            <li>Favorecer la autogestión y empoderamiento comunitario.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Qué hacemos -->
-    <section id="que-hacemos">
-      <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Qué hacemos</h2></div>
-      <div class="card">
-        <p>Realizamos actividades culturales solidarias y juntamos donaciones para comprar alimentos que destinamos a comedores populares de la ciudad. También sostenemos espacios de encuentro y capacitación para jóvenes.</p>
-
-        <h3>Galería</h3>
-        <div class="gallery">
-          <a href="#"><img src="https://i.imgur.com/cftqa9l.jpg" alt="Día de las infancias 2024"></a>
-          <a href="#"><img src="https://i.imgur.com/6cT0w2M.jpeg" alt="Día de las infancias 2024-2"></a>
-          <a href="#"><img src="https://i.imgur.com/DxoiKUh.jpeg" alt="Día de las infancias 2024-3"></a>
-          <a href="#"><img src="https://i.imgur.com/zTrID3v.jpeg" alt="Espacio de encuentro"></a>
-          <a href="#"><img src="https://i.imgur.com/ZUWhHs8.jpg" alt="Cena Fin de año 2024"></a>
-          <a href="#"><img src="https://i.imgur.com/Z9ZdXVx.jpeg" alt="Cena Fin de año 2024-2"></a>
-          <a href="#"><img src="https://i.imgur.com/ClkL3Xh.jpg" alt="Proyecto Alfabetización"></a>
-          <a href="#"><img src="https://i.imgur.com/AYVNLKe.jpeg" alt="Proyecto Alfabetización-2"></a>
-          <a href="#"><img src="https://i.imgur.com/R93Dp3d.jpg" alt="Proyecto Raíces Solidarias"></a>
-          <a href="#"><img src="https://i.imgur.com/wUtLm3G.jpeg" alt="Proyecto Raíces Solidarias"></a>
-          <a href="#"><img src="https://i.imgur.com/yTVJ0Qb.jpg" alt="Día de las infancias 2025"></a>
-          <a href="#"><img src="https://i.imgur.com/HEhsg9t.jpeg" alt="Día de las infancias 2025-2"></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Puntos Colectar -->
-    <section id="puntos-colectar">
-      <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Puntos Colectar</h2></div>
-      <div class="card">
-        <ul>
-          <li>Distrito 6 — San Martin 1168</li>
-          <li>Espacio Cultural Echesortu — San Nicolás 1164</li>
-          <li>Espacio Social y Cultural "Casona" — San Lorenzo 2157</li>
-          <li>Club social y deportivo "Cóndor" — Cafferata 1477</li>
-          <li>Centro cultural Mística — Richieri 340</li>
-          <li>Espacio de ideas Poliedro — 9 de julio 2074</li>
-          <li>Centro cultural "El Grito" — 9 de julio 1484</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Empresas -->
-    <section id="empresas">
-      <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Empresas y aliados</h2></div>
-      <div class="card">
-        <p>Los proyectos de Colectar se realizan gracias al apoyo de donaciones privadas de particulares, instituciones y empresas. Podés colaborar con las siguientes acciones:</p>
-        <ul>
-          <li>Organizar una actividad cultural solidaria.</li>
-          <li>Realizar una colecta de alimentos.</li>
-          <li>Aporte económico único o mensual.</li>
-          <li>Contratar consultoría para proyectos de inclusión social.</li>
-          <li>Donación de productos o servicios.</li>
-        </ul>
-        <p>Si te interesa colaborar, escribinos a <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a></p>
-      </div>
-    </section>
-
-    <!-- Eventos -->
-    <section id="eventos">
-      <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Eventos</h2></div>
-      <div class="card">
-        <ul>
-          <li>Espacio de encuentro de jóvenes — sábados cada 15 días (Biblioteca Juanito Laguna)</li>
-          <li>Arte y Merienda — Espacio Cultural Echesortu (Abril 2024)</li>
-          <li>Fiesta de los '80 — Centro Cultural Mística (Mayo 2024)</li>
-          <li>Milonga — Club Cóndor (Agosto 2024)</li>
-          <li>Festejo día de la niñez — Barrio Santa Lucía (Agosto 2024)</li>
-          <li>Triple impacto con Mercado de Gafas (Noviembre 2024)</li>
-          <li>Cata de vino con música en vivo — Espacio Cultural Echesortu (Diciembre 2024)</li>
-          <li>Cena fin de año en Travesía — Diciembre 2024</li>
-          <li>Bingo Solidario — Centro Cultural "El grito" (Mayo 2025)</li>
-          <li>Torneo Solidario de Truco — Centro Cultural "El grito" (Junio y Agosto 2025)</li>
-          <li>Clase de Yoga Solidaria — Espacio Cultural Echesortu (Agosto 2025)</li>
-          <li>Festejo día de la niñez — Barrio Travesía (Agosto 2025)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Donar / Sumate -->
-    <section id="donar">
-      <div class="section-title"><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo"><h2>Donar / Sumate</h2></div>
-      <div class="card">
-        <p>Sabés como nos financiamos?</p>
-        <ul>
-          <li>Apoyo de nuestros socios</li>
-          <li>Organizamos actividades culturales Solidarias</li>
-          <li>Realizamos campañas especificas (vuelta al cole, día de las infancias, finde año)</li>
-          <li>Realizamos rifas solidarias</li>
-          <li>Buscamos alianzas con empresas privadas</li>
-          <li>Buscamos alianzas con otras organizaciones sociales</li>
-        </ul>
-        <p>NO RECIBIMOS AYUDA ECONÓMICA DE NINGÚN ESPACIO POLÍTICO</p>
-        <p>Tu apoyo mantiene comedores y actividades culturales. Podés colaborar con:</p>
-        <ul>
-          <li>Donaciones de alimentos no perecederos</li>
-          <li>Aportes económicos (únicos o mensuales)</li>
-          <li>Ser voluntario/a en nuestras actividades</li>
-        </ul>
-        <p>Consultas y coordinación: <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a> • Tel: 3416836137 / 3413028435</p>
-        <p>Alias de pago: <strong>COLECTAR.ONG</strong></p>
-        <p><a class="btn primary" href="https://link.mercadopago.com.ar/donacioncolectarong" target="_blank" rel="noopener">Donar ahora</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px">
-      <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo" style="width:48px;">
-      <div><strong>Colectar</strong><br><small>Asociación Civil — Rosario</small></div>
     </div>
     <p class="muted">Slogan: “Tu pequeño aporte construye un presente digno y un futuro posible.”</p>
     <p class="muted">Instagram / Facebook: <strong>@colectar.ros</strong></p>
     <p class="muted">Email: <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a></p>
-    <div class="card" style="padding:12px;margin:12px auto;max-width:200px;">
-      <div style="font-weight:700">Donación rápida</div>
-      <small class="muted">Alias de pago</small>
-      <div style="margin-top:8px;font-weight:800">COLECTAR.ONG</div>
-    </div>
-    <p style="text-align:center;margin-top:12px;">© Colectar — Asociación Civil • Fundada febrero 2024</p>
-  </footer>
-
-  <script>
-    // Botón asociate
-    document.getElementById('asociate-btn').addEventListener('click',()=>{
-      const btns = document.getElementById('asociate-buttons');
-      btns.style.display = btns.style.display==='flex'?'none':'flex';
-      btns.style.flexDirection = 'row';
-    });
-  </script>
+    <p class="muted">© Colectar — Asociación Civil • Fundada febrero 2024</p>
+  </div>
+</footer>
 </body>
 </html>
