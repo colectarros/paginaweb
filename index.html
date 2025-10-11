@@ -160,22 +160,22 @@ ul.plain li, ol li { margin-bottom:8px; }
   border: none;
   scroll-snap-align: center;
 }
-
-/* Celulares */
+/* --- AJUSTE RESPONSIVE SNAPWIDGET (agrandar en celu) --- */
 @media(max-width:768px){
   .instagram-carousel iframe {
-    flex: 0 0 95%;
-    max-width: 95%;
-    height: 420px;
+    transform: scale(1.4);        /* agranda el contenido */
+    transform-origin: top center; /* centra el zoom */
+    width: 100%;                  /* ocupa el ancho disponible */
+    height: 480px;                /* alto ajustado al zoom */
   }
 }
 
-/* Pantallas muy chicas */
+/* Opcional: para pantallas muy chicas */
 @media(max-width:480px){
   .instagram-carousel iframe {
-    flex: 0 0 100%;
-    max-width: 100%;
-    height: 400px;
+    transform: scale(1.6);
+    transform-origin: top center;
+    height: 520px;
   }
 }
 /* --- FOOTER --- */
