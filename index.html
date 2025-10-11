@@ -142,31 +142,47 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
   display: flex;
   justify-content: center;
   margin-top: 16px;
+  width: 100%;
 }
 
 .instagram-carousel {
   overflow-x: auto;
   display: flex;
+  justify-content: center;
   gap: 12px;
   padding: 12px 0;
   width: 100%;
-  max-width: 480px; /* limita en pantallas grandes */
+  max-width: 100%; /* elimina límite fijo */
 }
 
 .instagram-carousel iframe {
-  width: 100%;              /* ocupa todo el ancho disponible */
-  max-width: 480px;         /* en compu no pasa de 480px */
-  aspect-ratio: 3 / 2;      /* mantiene proporción ancho/alto */
+  width: 100%;
+  max-width: 100%; /* se adapta al ancho total */
+  aspect-ratio: 3 / 2; /* mantiene proporción visual */
   border-radius: 12px;
   border: none;
 }
 
 /* --- RESPONSIVE --- */
 @media(max-width:980px){
-  .hero { grid-template-columns:1fr; }
-  .hero-photo { order:-1; margin-bottom:24px;}
-  .gallery { grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
-  .instagram-carousel iframe { width:90%; height:280px; }
+  .hero {
+    grid-template-columns:1fr;
+  }
+  .hero-photo {
+    order:-1;
+    margin-bottom:24px;
+  }
+  .gallery {
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  }
+  .instagram-carousel-container {
+    margin-top: 24px;
+  }
+  .instagram-carousel iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* más cuadrado en celus */
+  }
 }
 
 /* menú hamburguesa */
@@ -383,19 +399,40 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
 </main>
 
 <footer>
-  <div class="wrap">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
-      <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar" style="width:48px;height:48px;">
-      <div>
-        <strong>Colectar</strong><br>
-        <small class="muted">Asociación Civil — Rosario</small>
-      </div>
-    </div>
+  <div class="wrap footer-content">
+    <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar" class="footer-logo">
+    <strong>Colectar</strong><br>
+    <small class="muted">Asociación Civil — Rosario</small>
     <p class="muted">Tu pequeño aporte construye un presente digno y un futuro posible.</p>
     <p class="muted">Instagram / Facebook: <strong>@colectar.ros</strong></p>
     <p class="muted">Email: <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a></p>
     <p class="muted">© Colectar — Asociación Civil • Fundada febrero 2024</p>
   </div>
 </footer>
+
+<style>
+footer {
+  padding: 30px 0;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+</style>
+
 </body>
 </html>
