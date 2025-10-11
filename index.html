@@ -11,7 +11,7 @@
 <style>
 :root {
   --bg: #f9f6f8;
-  --accent: #BDA0F5; /* violeta pastel */
+  --accent: #BDA0F5;
   --muted: #b8a7c9;
   --soft: #fff6f9;
   --text: #222;
@@ -29,7 +29,7 @@ body {
   text-align: justify;
 }
 
-a { text-decoration: none; }
+a { text-decoration: none; color: var(--accent); }
 
 header {
   background: var(--accent);
@@ -40,9 +40,7 @@ header {
 
 .wrap { max-width: 1100px; margin:0 auto; padding: 0 18px; }
 
-nav {
-  display:flex; justify-content: space-between; align-items: center;
-}
+nav { display:flex; justify-content: space-between; align-items: center; }
 
 .brand { display:flex; align-items:center; gap:12px; }
 .brand img { width:48px; height:48px; border-radius:8px; }
@@ -51,10 +49,7 @@ nav {
 .menu a { padding:8px 12px; border-radius:8px; font-weight:600; color:white; transition:0.3s; }
 .menu a:hover { background: rgba(255,255,255,0.2); }
 
-.cta-dropdown {
-  position: relative;
-  display: inline-block;
-}
+.cta-dropdown { position: relative; display: inline-block; }
 .cta-dropdown-content {
   display: none;
   position: absolute;
@@ -136,34 +131,90 @@ ul.plain li, ol li { margin-bottom:8px; }
 }
 .btn:hover { background: #a988e0; }
 
-footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0.9rem; color: var(--muted); }
-
+/* --- CARRUSEL INSTAGRAM --- */
 .instagram-carousel-container {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   justify-content: center;
-  margin-top: 16px;
-  width: 100%;
+  margin-top: 20px;
 }
 
 .instagram-carousel {
-  overflow-x: auto;
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px 0;
+  gap: 14px;
+  padding: 10px;
+  scroll-snap-align: start;
   width: 100%;
-  max-width: 100%; /* elimina límite fijo */
+  max-width: 100%;
 }
 
 .instagram-carousel iframe {
-  width: 100%;
-  max-width: 100%; /* se adapta al ancho total */
-  aspect-ratio: 3 / 2; /* mantiene proporción visual */
+  flex: 0 0 320px;
+  height: 360px;
   border-radius: 12px;
   border: none;
+  scroll-snap-align: center;
 }
 
-/* --- RESPONSIVE --- */
+@media(max-width:768px){
+  .instagram-carousel iframe {
+    flex: 0 0 260px;
+    height: 300px;
+  }
+}
+
+/* --- FOOTER --- */
+footer {
+  padding: 40px 0;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.footer-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-title strong {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.footer-title small {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+footer a {
+  color: var(--accent);
+}
+
+/* --- RESPONSIVE GENERAL --- */
 @media(max-width:980px){
   .hero {
     grid-template-columns:1fr;
@@ -175,17 +226,8 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
   .gallery {
     grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   }
-  .instagram-carousel-container {
-    margin-top: 24px;
-  }
-  .instagram-carousel iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1; /* más cuadrado en celus */
-  }
 }
 
-/* menú hamburguesa */
 .menu-toggle {
   display: none;
   font-size: 26px;
@@ -238,12 +280,15 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
     <h1>Hasta que todo sea como lo soñamos</h1>
     <p><strong>Colectar</strong> es una asociación civil que trabaja desde febrero de 2024 para promover el desarrollo integral de personas en contextos de vulnerabilidad, enfocándose principalmente en infancias y adolescencias. Ayudanos a sostener comedores, brindamos apoyo escolar, realizamos talleres temáticos y diversas actividades culturales.</p>
     <p><a class="btn" href="https://link.mercadopago.com.ar/donacioncolectarong" target="_blank">Sumate / Donar</a></p>
+
+    <!-- Carrusel Instagram -->
     <div class="instagram-carousel-container">
       <div class="instagram-carousel">
         <iframe src="https://snapwidget.com/embed/1109905" allowtransparency="true" scrolling="no" title="Posts from Instagram"></iframe>
       </div>
     </div>
   </div>
+
   <div class="hero-photo">
     <img src="https://i.imgur.com/eyxKSWV.jpeg" alt="Foto inicio Colectar">
   </div>
@@ -401,38 +446,16 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
 <footer>
   <div class="wrap footer-content">
     <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar" class="footer-logo">
-    <strong>Colectar</strong><br>
-    <small class="muted">Asociación Civil — Rosario</small>
-    <p class="muted">Tu pequeño aporte construye un presente digno y un futuro posible.</p>
-    <p class="muted">Instagram / Facebook: <strong>@colectar.ros</strong></p>
-    <p class="muted">Email: <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a></p>
-    <p class="muted">© Colectar — Asociación Civil • Fundada febrero 2024</p>
+    <div class="footer-title">
+      <strong>Colectar</strong>
+      <small>Asociación Civil — Rosario</small>
+    </div>
+    <p>Tu pequeño aporte construye un presente digno y un futuro posible.</p>
+    <p>Instagram / Facebook: <strong>@colectar.ros</strong></p>
+    <p>Email: <a href="mailto:colectar.ros@gmail.com">colectar.ros@gmail.com</a></p>
+    <p>© Colectar — Asociación Civil • Fundada febrero 2024</p>
   </div>
 </footer>
-
-<style>
-footer {
-  padding: 30px 0;
-  background: var(--soft);
-  color: var(--muted);
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.footer-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 8px;
-  margin-bottom: 6px;
-}
-</style>
 
 </body>
 </html>
