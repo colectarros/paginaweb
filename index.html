@@ -157,11 +157,28 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
   width:480px;
 }
 
+/* --- RESPONSIVE --- */
 @media(max-width:980px){
   .hero { grid-template-columns:1fr; }
   .hero-photo { order:-1; margin-bottom:24px;}
   .gallery { grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); }
   .instagram-carousel iframe { width:90%; height:280px; }
+}
+
+/* menú hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+@media(max-width:720px){
+  nav { flex-wrap:wrap; }
+  .menu { display:none; flex-direction:column; width:100%; background:var(--accent); margin-top:10px; }
+  .menu a { padding:10px; }
+  .menu.show { display:flex; }
+  .menu-toggle { display:block; }
 }
 </style>
 </head>
@@ -174,6 +191,7 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
         <img src="https://i.imgur.com/ZmtZENb.png" alt="Logo Colectar">
         <strong style="color:white;">Colectar</strong>
       </div>
+      <span class="menu-toggle" onclick="document.querySelector('.menu').classList.toggle('show')">☰</span>
       <div class="menu">
         <a href="#inicio">Inicio</a>
         <a href="#quienes">Quiénes somos</a>
@@ -194,13 +212,12 @@ footer { padding:30px 0; background: var(--soft); text-align:center; font-size:0
 </header>
 
 <main class="wrap">
+
 <section id="inicio" class="hero">
   <div class="lead">
     <h1>Hasta que todo sea como lo soñamos</h1>
     <p><strong>Colectar</strong> es una asociación civil que trabaja desde febrero de 2024 para promover el desarrollo integral de personas en contextos de vulnerabilidad, enfocándose principalmente en infancias y adolescencias. Ayudanos a sostener comedores, brindamos apoyo escolar, realizamos talleres temáticos y diversas actividades culturales.</p>
-
     <p><a class="btn" href="https://link.mercadopago.com.ar/donacioncolectarong" target="_blank">Sumate / Donar</a></p>
-
     <div class="instagram-carousel-container">
       <div class="instagram-carousel">
         <iframe src="https://snapwidget.com/embed/1109905" allowtransparency="true" scrolling="no" title="Posts from Instagram"></iframe>
