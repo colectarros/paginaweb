@@ -519,27 +519,28 @@ footer a {
     <button class="btn pastel-btn" onclick="toggleForm()">💜 Quiero colaborar</button>
 
     <!-- Formulario oculto inicialmente -->
-  <div id="formulario-colaborar" class="form-wrapper" style="display:none;">
-  <form id="colaborar-form" action="https://formspree.io/f/mayvlgqj" method="POST" class="contact-form">
-    <h3>Formulario de colaboración</h3>
-    
-    <label for="nombre">Nombre completo:</label>
-    <input type="text" id="nombre" name="nombre" required>
+    <div id="formulario-colaborar" class="form-wrapper" style="display:none;">
+      <form id="colaborar-form" action="https://formspree.io/f/mayvlgqj" method="POST" class="contact-form">
+        <h3>Formulario de colaboración</h3>
 
-    <label for="empresa">Empresa/Organización (opcional):</label>
-    <input type="text" id="empresa" name="empresa">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required>
+        <label for="empresa">Empresa/Organización (opcional):</label>
+        <input type="text" id="empresa" name="empresa">
 
-    <label for="mensaje">Mensaje / Tipo de colaboración:</label>
-    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-    <button type="submit" class="btn enviar-btn">Enviar</button>
+        <label for="mensaje">Mensaje / Tipo de colaboración:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-    <p id="form-status" class="form-status"></p>
-  </form>
-</div>
+        <button type="submit" class="btn enviar-btn">Enviar</button>
+
+        <p id="form-status" class="form-status"></p>
+      </form>
+    </div>
+
     <br><br>
     <h3>Organizaciones y empresas que nos acompañan</h3>
     <p>Estas son algunas de las organizaciones y empresas que ya confiaron en nosotros y nos han brindado su apoyo:</p>
@@ -551,21 +552,14 @@ footer a {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSozGZj2enqnxu7BdLLLSP4QF5NIkUBq2zFN_4RJW94rj0gtzWe2tVb27hHsoQklgFezqg&usqp=CAU.jpg" alt="Concejo Ciencias Económicas">
       <img src="https://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg" alt="La Segunda">
       <img src="https://coad.org.ar/wp-content/uploads/2024/06/LOGO-COAD-TRANSPARENTE.png" alt="COAD">
-     <img src="data:image/png;base64,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" alt="Zephyra" style="filter:brightness(1.1) contrast(1.1); transform:scale(1.1);">
+      <img src="data:image/png;base64,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" alt="Zephyra" style="filter:brightness(1.2);transform:scale(1.15);">
     </div>
-    
+
     <p class="agradecimiento">¡Muchas gracias por elegirnos para potenciar el impacto de nuestras acciones!</p>
   </div>
 </section>
-  
-  <!-- SCRIPT para mostrar/ocultar el formulario -->
-<script>
-function toggleForm() {
-  const form = document.getElementById("formulario-colaborar");
-  form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
-  form.scrollIntoView({ behavior: "smooth" });
-}
-  <!-- SCRIPT -->
+
+<!-- SCRIPT FUNCIONAL -->
 <script>
 function toggleForm() {
   const form = document.getElementById("formulario-colaborar");
@@ -573,34 +567,35 @@ function toggleForm() {
   form.scrollIntoView({ behavior: "smooth" });
 }
 
-// Manejo del envío del formulario
-const form = document.getElementById("colaborar-form");
-const status = document.getElementById("form-status");
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("colaborar-form");
+  const status = document.getElementById("form-status");
 
-form.addEventListener("submit", async function(event) {
-  event.preventDefault();
-  const data = new FormData(form);
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      status.textContent = "✅ ¡Gracias por tu mensaje! Te contactaremos pronto.";
-      status.style.color = "#7b5ba7";
-      form.reset();
-    } else {
-      status.textContent = "❌ Ocurrió un error al enviar el formulario. Intentá nuevamente.";
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const data = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        status.textContent = "✅ ¡Gracias por tu mensaje! Te contactaremos pronto.";
+        status.style.color = "#7b5ba7";
+        form.reset();
+      } else {
+        status.textContent = "❌ Ocurrió un error al enviar el formulario. Intentá nuevamente.";
+        status.style.color = "#b94c4c";
+      }
+    } catch (error) {
+      status.textContent = "❌ Error de conexión. Por favor, revisá tu internet e intentá otra vez.";
       status.style.color = "#b94c4c";
     }
-  } catch (error) {
-    status.textContent = "❌ Error de conexión. Por favor, revisá tu internet e intentá otra vez.";
-    status.style.color = "#b94c4c";
-  }
+  });
 });
 </script>
-  
+
 <style>
 /* FORMULARIO DE COLABORACIÓN */
 .form-wrapper {
@@ -608,7 +603,7 @@ form.addEventListener("submit", async function(event) {
   display: flex;
   justify-content: center;
 }
-  .form-status {
+.form-status {
   margin-top: 10px;
   font-weight: 600;
   text-align: center;
@@ -650,7 +645,7 @@ form.addEventListener("submit", async function(event) {
 }
 
 .enviar-btn {
-  background-color: #d6b9f0;
+  background-color: #e3c8f5;
   color: #fff;
   border: none;
   padding: 12px 18px;
@@ -664,7 +659,7 @@ form.addEventListener("submit", async function(event) {
 }
 
 .enviar-btn:hover {
-  background-color: #c3a2e4;
+  background-color: #d2b3ec;
 }
 
 /* BOTÓN PRINCIPAL */
@@ -684,46 +679,6 @@ form.addEventListener("submit", async function(event) {
 }
 
 /* LOGOS */
-.logos-grid img {
-  max-height: 80px;
-  object-fit: contain;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.logos-grid img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* AGRADECIMIENTO */
-.agradecimiento {
-  text-align: center;
-  font-style: italic;
-  margin-top: 20px;
-  color: #6b5a7c;
-}
-/* Logos un poco más grandes y aclarados */
-.logos-grid img {
-  width: 130px;
-  max-height: 80px;
-  object-fit: contain;
-  opacity: 0.85;
-  transition: transform 0.3s, opacity 0.3s;
-}
-.logos-grid img:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-/* Texto de agradecimiento */
-.agradecimiento {
-  text-align: center;
-  font-style: italic;
-  margin-top: 20px;
-  color: #555;
-}
-
-/* Logos */
 .logos-grid {
   display: flex;
   flex-wrap: wrap;
@@ -733,13 +688,25 @@ form.addEventListener("submit", async function(event) {
 }
 
 .logos-grid img {
-  max-width: 120px;
-  filter: brightness(1.2);
-  transition: transform 0.3s;
+  width: 130px;
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s, opacity 0.3s;
+  filter: brightness(1.1);
 }
 
 .logos-grid img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* AGRADECIMIENTO */
+.agradecimiento {
+  text-align: center;
+  font-style: italic;
+  margin-top: 20px;
+  color: #6b5a7c;
 }
 
 /* Responsive */
