@@ -130,6 +130,24 @@ ul.plain li, ol li { margin-bottom:8px; }
   transition:0.3s;
 }
 .btn:hover { background: #a988e0; }
+  
+/* CSS para galerías pequeñas */
+    .gallery-small {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px; /* espacio entre imágenes */
+      margin-top: 10px;
+    }
+
+    .gallery-small img {
+      width: 150px; /* ancho uniforme */
+      height: auto; /* mantiene proporción */
+      object-fit: cover; /* recorta si es necesario */
+      border-radius: 4px; /* bordes redondeados opcionales */
+    }
+  </style>
+</head>
+
 
 /* --- CARRUSEL INSTAGRAM --- */
 .instagram-carousel-container {
@@ -366,60 +384,64 @@ footer a {
 <section id="acciones">
   <div class="card">
     <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Nuestras acciones</h2>
-    <p>En Colectar desarrollamos nuestras actividades a través de distintos ejes de acción, combinando el trabajo directo en los barrios, la colaboración con otras entidades y la organización de actividades culturales. Cada uno de estos ejes nos permite generar un impacto concreto, acompañar a quienes más lo necesitan y fomentar la participación de la comunidad, construyendo juntos un entorno más solidario y equitativo</p>
+    <p>En Colectar desarrollamos nuestras actividades a través de distintos ejes de acción, combinando el trabajo directo en los barrios, la gestión de proyectos en colaboración con otras entidades y la organización de actividades culturales. Cada uno de estos ejes nos permite generar un impacto concreto, acompañar a quienes más lo necesitan y fomentar la participación de la comunidad, construyendo juntos un entorno más solidario y equitativo.</p>
 
-    <!-- Acciones en barrios -->
-    <div class="subsection">
-      <h3>Acciones en barrios</h3>
-      <p>Nos involucramos directamente en los barrios donde desarrollamos nuestras actividades, llevando adelante campañas y talleres que buscan acompañar y fortalecer a las infancias y adolescencias. Desde festejos del Día de la Niñez hasta apoyo escolar y campañas de útiles escolares, buscamos generar espacios de contención, aprendizaje y alegría, fomentando vínculos de confianza y solidaridad con las comunidades locales.</p>
-      <p class="muted">Actualmente colaboramos con:</p>
-      <ul class="plain points">
-        <li>Comedor “Manitos a la obra” — Travesía</li>
-        <li>Comedor “Estrellita” — Villa Banana</li>
-        <li>Comedor “Pequeños Actores” — Santa Clara</li>
-      </ul>
-      <p>Estas son las acciones que llevamos adelante:</p>
-      <ul class="plain">
-        <li>Campaña Vuelta al Cole</li>
-        <li>Festejo del Día de la Niñez</li>
-        <li>Cena de Fin de Año</li>
-        <li>Apoyo escolar y espacios de encuentro con infancias y adolescencias</li>
-        <li>Entrega de alimentos y ropa</li>
-        <li>Campañas por emergencias (por inundaciones, nacimientos, enfermedades, etc)</li>
-       </ul>
-        <div class="gallery">
-        <img src="https://i.imgur.com/cftqa9l.jpg" alt="Día de las infancias 2024">
-        <img src="https://i.imgur.com/6cT0w2M.jpeg" alt="Día de las infancias 2024-2">
-        <img src="https://i.imgur.com/DxoiKUh.jpeg" alt="Día de las infancias 2024-3">
-        <img src="https://i.imgur.com/zTrID3v.jpeg" alt="Espacio de encuentro">
-        <img src="https://i.imgur.com/ZUWhHs8.jpg" alt="Cena Fin de año 2024">
-        <img src="https://i.imgur.com/Z9ZdXVx.jpeg" alt="Cena Fin de año 2024-2">
-        <img src="https://i.imgur.com/ClkL3Xh.jpg" alt="Proyecto Alfabetización">
-        <img src="https://i.imgur.com/AYVNLKe.jpeg" alt="Proyecto Alfabetización-2">
-        <img src="https://i.imgur.com/yTVJ0Qb.jpg" alt="Día de las infancias 2025">
-        <img src="https://i.imgur.com/HEhsg9t.jpeg" alt="Día de las infancias 2025-2">
-        <img src="https://i.imgur.com/jlMVsOP.jpeg" alt="Reparto alimentos">
-        <img src="https://i.imgur.com/JV8uut0.jpeg" alt="frutas">
-        <img src="https://i.imgur.com/zNJo9XG.jpeg" alt="Muebles">
-        <img src="https://i.imgur.com/mPqvk4q.jpeg" alt="Mochis">
-        <img src="https://i.imgur.com/TnrY7g9.jpeg" alt="Entrega mochis">
-        <img src="https://i.imgur.com/xIUEgQs.jpeg" alt="elaboracion de repelente">
-      </div>
+ <!-- Acciones en barrios -->
+<div class="subsection">
+  <h3>Acciones en barrios</h3>
+  <p>Nos involucramos directamente en los barrios donde desarrollamos nuestras actividades, llevando adelante campañas y talleres que buscan acompañar y fortalecer a las infancias y adolescencias. Desde festejos del Día de la Niñez hasta apoyo escolar y campañas de útiles escolares, buscamos generar espacios de contención, aprendizaje y alegría, fomentando vínculos de confianza y solidaridad con las comunidades locales.</p>
 
-    <!-- Proyectos con otras entidades -->
-    <div class="subsection">
-      <h3>Proyectos</h3>
-      <p>Trabajamos en conjunto con otras organizaciones e instituciones locales para ampliar el alcance y la efectividad de nuestros proyectos. Cada alianza nos permite compartir recursos, experiencias y conocimientos, generando iniciativas que impacten de manera directa en las comunidades. Estamos conbvencidas de que la cooperación entre distintas instituciones potencia los resultados y fortalece el tejido social. Los proyectos que llevamos adelante hasta el momento son:</p>
-      <ul class="plain">
-        <li>Raíces Solidarias <br>
-          <span style="font-size:0.9em; font-style:italic;">Proyecto de Soberanía Alimentaria, Huerta y Gestión de Residuos: se entregaron huerteros, semillas, plantines y kits de herramientas a cada familia para trabajar la tierra. El proyecto se desarrolló en el playón común de Barrio Travesía a lo largo de un ciclo de tres talleres con docentes especializados, destinado a toda la familia —niños y padres—, promoviendo el aprendizaje práctico sobre cultivo y compostaje, así como el fortalecimiento de los lazos entre vecinos. Además, se colocaron dos contenedores de residuos de 200 Litros cada uno, atendiendo a la problemática de acumulación de desechos que generaba malos olores e incrementaba el riesgo de inundaciones, respondiendo así a una necesidad concreta de la comunidad. Este proyecto se realizó en conjunto con la organización Jóvenes por el Clima y fue aprobado por el Area de Acción Climática de la Municipalidad de Rosario. Compartimos algunas imágenes:</span> <br>
-          <img src="https://i.imgur.com/R93Dp3d.jpg" alt="Proyecto Raíces Solidarias">
-          <img src="https://i.imgur.com/wUtLm3G.jpeg" alt="Proyecto Raíces Solidarias2">
-          <img src="https://i.imgur.com/gwVvHDl.jpeg" alt="proyecto raices">
-          <img src="https://i.imgur.com/YT1Xwts.jpeg" alt="peques en raices">
-          <img src="https://i.imgur.com/c14AeV2.jpeg" alt="huerteros">
-          <img src="https://pbs.twimg.com/profile_images/1106016178630201345/aMnEN_by_400x400.jpg" alt="Jóvenes por el Clima" style="height:60px;margin-top:8px;">
-        </li>
+  <p class="muted">Actualmente colaboramos con el Comedor “Manitos a la obra” de Travesía, el Comedor “Estrellita” de Bella Vista y el Comedor “Pequeños Actores” ubicado en el barrio Santa Clara.</p>
+
+  <p>Estas son las acciones que llevamos adelante:</p>
+  <ul class="plain">
+    <li>Campaña Vuelta al Cole</li>
+    <li>Festejo del Día de la Niñez</li>
+    <li>Cena de Fin de Año</li>
+    <li>Apoyo escolar y espacios de encuentro con infancias y adolescencias</li>
+    <li>Entrega de alimentos y ropa</li>
+    <li>Campañas por emergencias (por inundaciones, nacimientos, enfermedades, etc)</li>
+  </ul>
+
+  <div class="gallery">
+    <img src="https://i.imgur.com/cftqa9l.jpg" alt="Día de las infancias 2024">
+    <img src="https://i.imgur.com/DxoiKUh.jpeg" alt="Día de las infancias 2024-3">
+    <img src="https://i.imgur.com/zTrID3v.jpeg" alt="Espacio de encuentro">
+    <img src="https://i.imgur.com/ZUWhHs8.jpg" alt="Cena Fin de año 2024">
+    <img src="https://i.imgur.com/Z9ZdXVx.jpeg" alt="Cena Fin de año 2024-2">
+    <img src="https://i.imgur.com/ClkL3Xh.jpg" alt="Proyecto Alfabetización">
+    <img src="https://i.imgur.com/AYVNLKe.jpeg" alt="Proyecto Alfabetización-2">
+    <img src="https://i.imgur.com/yTVJ0Qb.jpg" alt="Día de las infancias 2025">
+    <img src="https://i.imgur.com/HEhsg9t.jpeg" alt="Día de las infancias 2025-2">
+    <img src="https://i.imgur.com/jlMVsOP.jpeg" alt="Reparto alimentos">
+    <img src="https://i.imgur.com/JV8uut0.jpeg" alt="frutas">
+    <img src="https://i.imgur.com/zNJo9XG.jpeg" alt="Muebles">
+    <img src="https://i.imgur.com/mPqvk4q.jpeg" alt="Mochis">
+    <img src="https://i.imgur.com/TnrY7g9.jpeg" alt="Entrega mochis">
+    <img src="https://i.imgur.com/xIUEgQs.jpeg" alt="Elaboración de repelente">
+  </div>
+</div>
+
+   <!-- Proyectos con otras entidades -->
+<div class="subsection">
+  <h3>Proyectos</h3>
+  <p>Trabajamos en conjunto con otras organizaciones e instituciones locales para ampliar el alcance y la efectividad de nuestros proyectos. Cada alianza nos permite compartir recursos, experiencias y conocimientos, generando iniciativas que impacten de manera directa en las comunidades. Estamos convencidas de que la cooperación entre distintas instituciones potencia los resultados y fortalece el tejido social. Los proyectos que llevamos adelante hasta el momento son:</p>
+
+  <ul class="plain">
+    <li>Raíces Solidarias <br>
+      <span style="font-size:0.9em; font-style:italic;">
+        Proyecto de Soberanía Alimentaria, Huerta y Gestión de Residuos: se entregaron huerteros, semillas, plantines y kits de herramientas a cada familia para trabajar la tierra. El proyecto se desarrolló en el playón común de Barrio Travesía a lo largo de un ciclo de tres talleres con docentes especializados, destinado a toda la familia —niños y padres—, promoviendo el aprendizaje práctico sobre cultivo y compostaje, así como el fortalecimiento de los lazos entre vecinos. Además, se colocaron dos contenedores de residuos de 200 Litros cada uno, atendiendo a la problemática de acumulación de desechos que generaba malos olores e incrementaba el riesgo de inundaciones, respondiendo así a una necesidad concreta de la comunidad. Este proyecto se realizó en conjunto con la organización Jóvenes por el Clima y fue aprobado por el Área de Acción Climática de la Municipalidad de Rosario. Compartimos algunas imágenes:
+      </span>
+
+      <!-- Galería de imágenes pequeña y uniforme -->
+      <div class="gallery-small">
+        <img src="https://i.imgur.com/R93Dp3d.jpg" alt="Proyecto Raíces Solidarias">
+        <img src="https://i.imgur.com/wUtLm3G.jpeg" alt="Proyecto Raíces Solidarias2">
+        <img src="https://i.imgur.com/gwVvHDl.jpeg" alt="Proyecto Raíces">
+        <img src="https://i.imgur.com/YT1Xwts.jpeg" alt="Peques en Raíces">
+        <img src="https://i.imgur.com/c14AeV2.jpeg" alt="Huerteros">
+        <img src="https://pbs.twimg.com/profile_images/1106016178630201345/aMnEN_by_400x400.jpg" alt="Jóvenes por el Clima" style="height:60px;margin-top:8px;">
+    </li>
         <li>Travesía y Derechos Ciudadanos <br>
           <span style="font-size:0.9em; font-style:italic;">Este proyecto busca acercar la universidad y el barrio Travesía, promoviendo el derecho a la ciudad y generando espacios de encuentro entre académicos y vecinas y vecinos. La dinámica incluye talleres en el barrio y recorridas por espacios universitarios e históricos-culturales de Rosario, garantizando accesibilidad y fomentando el diálogo entre la comunidad y la universidad. La iniciativa permite conocer en profundidad las cotidianidades barriales y fortalecer los lazos entre los participantes. Este proyecto se realizó en conjunto con el CAIS -Centro de Abordajes Interdisciplinario de lo Sociocultural- y fue aprobado por la secretaría de Extensión y Territorio de la Universidad Nacional de Rosario </span> <br>
           <div class="logos-grid">
@@ -479,7 +501,8 @@ footer a {
 <section id="empresas">
   <div class="card">
     <h2><img src="https://i.imgur.com/nIOo34W.jpeg" alt="Logo">Empresas y Aliados</h2>
-    <p>Los proyectos de Colectar se realizan gracias al apoyo de donaciones privadas de particulares, instituciones y empresas. Podés colaborar con las siguientes acciones:</p>
+    <p>Los proyectos de Colectar se realizan gracias al apoyo de donaciones privadas de particulares, instituciones y empresas.</p>
+    <p>Podés colaborar con las siguientes acciones:</p>
     <ul class="plain">
       <li>Organizar una actividad cultural solidaria.</li>
       <li>Realizar una colecta de alimentos en alguna actividad o espacio de su institución, organización o empresa.</li>
@@ -490,38 +513,118 @@ footer a {
     <p>Sumate a potenciar nuestro trabajo junto a las comunidades que más nos necesitan, juntos podemos construir una realidad más igualitaria y empática.</p>
 
     <!-- Formulario web -->
-    <h3>Quiero colaborar</h3>
-    <form action="https://formspree.io/f/mayvlgqj" method="POST" class="contact-form">
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" name="nombre" required>
+    <div class="contact-container">
+      <h3>Quiero colaborar</h3>
+      <form action="https://formspree.io/f/mayvlgqj" method="POST" class="contact-form">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-      <label for="empresa">Empresa/Organización (opcional):</label>
-      <input type="text" id="empresa" name="empresa">
+        <label for="empresa">Empresa/Organización (opcional):</label>
+        <input type="text" id="empresa" name="empresa">
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="mensaje">Mensaje / Tipo de colaboración:</label>
-      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <label for="mensaje">Mensaje / Tipo de colaboración:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-      <button type="submit" class="btn">Enviar</button>
-    </form>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
 
-    <h3>Estas son algunas de las organizaciones y empresas que ya confiaron en nosotros y nos han brindado su apoyo:</h3>
-    <p>¡Muchas gracias por elegirnos para potenciar el impacto de nuestras acciones!</p>
+    <p>Estas son algunas de las organizaciones y empresas que ya confiaron en nosotros y nos han brindado su apoyo:</p>
     <div class="logos-grid">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt50Q-wdXoCfp8HTwMny0Vdh_SM1PgBrJ3KQ&s.jpg" alt="Sindicato Obras Sanitarias">
       <img src="https://www.mutualamr.org.ar/wp-content/uploads/sites/14/2025/09/lamutualdeamr-37aniversario-294x300.png" alt="AMR">
       <img src="https://rosariofutbol.com/imagenes/archivos/deportesequipos/141_imagen_200.png" alt="UNR">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYjbnBBSh7Mojuq0LwLHYvLbyGCaLKWoMvmNTEQX_MWCgyV7IC7MDzUjO_Mgp2m8M&usqp=CAU.jpg" alt="CAIS">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYjbnBBSh7Mojuq0LwLHYvLbyGCaLKWoMvmNTEQX_MWCgyV7IC7MDzUjO_Mgp2m8M-hqM&usqp=CAU.jpg" alt="CAIS">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfarErQ54YZNNNfWObFkMwXmbmyR4RWV46CIPXCSQxOlWM8vaSf4prVghGpK9wdh_oMbg&usqp=CAU.jpg" alt="Mercado de Gafas">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSozGZj2enqnxu7BdLLLSP4QF5NIkUBq2zFN_4RJW94rj0gtzWe2tVb27hHsoQklgFezqg&usqp=CAU.jpg" alt="Concejo Ciencias Económicas">
       <img src="https://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg" alt="La Segunda">
       <img src="https://coad.org.ar/wp-content/uploads/2024/06/LOGO-COAD-TRANSPARENTE.png" alt="COAD">
-      <img src="https://media.licdn.com/dms/image/v2/D4D22AQFQgzDnd0WrPA/feedshare-shrink_800/feedshare-shrink_800/0/1720101876955?e=2147483647&v=beta&t=IVPwaa3DY0nHlRqbhODMRDoUvz68Hei-PYQ46w6jH98" alt="Zephyra">
+      <img src="https://media.licdn.com/dms/image/v2/D4D22AQFQgzDnd0WrPA/feedshare-shrink_800/feedshare-shrink_800/0/1720101876955/aMnEN_by_400x400.jpg" alt="Zephyra">
     </div>
+    <p>¡Muchas gracias por elegirnos para potenciar el impacto de nuestras acciones!</p>
   </div>
 </section>
+
+<style>
+/* Contact form */
+.contact-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contact-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.contact-form button.btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #900; /* bordó institucional */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button.btn:hover {
+  background-color: #b22;
+}
+
+/* Logos */
+.logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.logos-grid img {
+  max-width: 120px;
+  filter: brightness(1.2);
+  transition: transform 0.3s;
+}
+
+.logos-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logos-grid img {
+    max-width: 90px;
+  }
+}
+</style>
 
 <!-- DONAR -->
 <section id="donar">
