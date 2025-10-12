@@ -513,13 +513,31 @@ footer a {
       <li>Contratar nuestros servicios de consultoría para el diseño y gestión de proyectos de inclusión social.</li>
       <li>Donación de productos o servicios.</li>
     </ul>
-    <p>Sumate a potenciar nuestro trabajo junto a las comunidades que más nos necesitan, juntos podemos construir una realidad más igualitaria y empática.</p>
+    <p>Sumate a potenciar nuestro trabajo junto a las comunidades que más nos necesitan. Juntos podemos construir una realidad más igualitaria y empática.</p>
 
-    <!-- Botón que abre el formulario en otra pestaña -->
-    <p style="text-align:center;">
-      <a class="btn pastel-btn" href="https://formspree.io/f/mayvlgqj" target="_blank">Quiero colaborar</a>
-    </p>
+    <!-- Botón que despliega el formulario -->
+    <button class="btn pastel-btn" onclick="toggleForm()">💜 Quiero colaborar</button>
 
+    <!-- Formulario oculto inicialmente -->
+    <div id="formulario-colaborar" class="form-wrapper" style="display:none;">
+      <form action="https://formspree.io/f/mayvlgqj" method="POST" class="contact-form">
+        <h3>Formulario de colaboración</h3>
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="empresa">Empresa/Organización (opcional):</label>
+        <input type="text" id="empresa" name="empresa">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje / Tipo de colaboración:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit" class="btn enviar-btn">Enviar</button>
+      </form>
+    </div>
+    <br><br>
     <h3>Organizaciones y empresas que nos acompañan</h3>
     <p>Estas son algunas de las organizaciones y empresas que ya confiaron en nosotros y nos han brindado su apoyo:</p>
 
@@ -530,28 +548,117 @@ footer a {
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSozGZj2enqnxu7BdLLLSP4QF5NIkUBq2zFN_4RJW94rj0gtzWe2tVb27hHsoQklgFezqg&usqp=CAU.jpg" alt="Concejo Ciencias Económicas">
       <img src="https://wwwlasegundal2prodnj.azurewebsites.net/assets/img/logo-fb.jpg" alt="La Segunda">
       <img src="https://coad.org.ar/wp-content/uploads/2024/06/LOGO-COAD-TRANSPARENTE.png" alt="COAD">
-     <img src="data:image/png;base64,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" alt="Zephyra">
+     <img src="data:image/png;base64,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" alt="Zephyra" style="filter:brightness(1.1) contrast(1.1); transform:scale(1.1);">
     </div>
-
+    
     <p class="agradecimiento">¡Muchas gracias por elegirnos para potenciar el impacto de nuestras acciones!</p>
   </div>
 </section>
   
-<style>
-/* Botón pastel */
-.pastel-btn {
-  background-color: #c57a7a; /* bordó pastel */
-  color: white;
-  padding: 10px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  <!-- SCRIPT para mostrar/ocultar el formulario -->
+<script>
+function toggleForm() {
+  const form = document.getElementById("formulario-colaborar");
+  form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+  form.scrollIntoView({ behavior: "smooth" });
 }
-.pastel-btn:hover {
-  background-color: #b86969;
+</script>
+  
+<style>
+/* FORMULARIO DE COLABORACIÓN */
+.form-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
+.contact-form {
+  background-color: #fff;
+  border: 2px solid #e5d3f0;
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(190, 160, 210, 0.15);
+}
+
+.contact-form h3 {
+  color: #b694d9;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #5a4b6b;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d4c2e0;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.enviar-btn {
+  background-color: #d6b9f0;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.enviar-btn:hover {
+  background-color: #c3a2e4;
+}
+
+/* BOTÓN PRINCIPAL */
+.pastel-btn {
+  background-color: #cbb7f0;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.pastel-btn:hover {
+  background-color: #bfa3e8;
+}
+
+/* LOGOS */
+.logos-grid img {
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.logos-grid img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* AGRADECIMIENTO */
+.agradecimiento {
+  text-align: center;
+  font-style: italic;
+  margin-top: 20px;
+  color: #6b5a7c;
+}
 /* Logos un poco más grandes y aclarados */
 .logos-grid img {
   width: 130px;
